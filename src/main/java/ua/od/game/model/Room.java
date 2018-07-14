@@ -13,9 +13,8 @@ import java.util.Date;
  */
 @Data
 @Entity
-@Table(name = "room")
-@EntityListeners(AuditingEntityListener.class)
-public class RoomEntity implements Serializable {
+//@EntityListeners(AuditingEntityListener.class)
+public class Room implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

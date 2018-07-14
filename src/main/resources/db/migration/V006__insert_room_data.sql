@@ -1,4 +1,4 @@
-INSERT INTO `Room`
+INSERT INTO `room`
   (`name`,`description`)
 VALUES
   ('Kiev','Kiev Game Room'),

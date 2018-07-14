@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.od.game.dto.RoomDto;
 import ua.od.game.exception.ResourceNotFoundException;
-import ua.od.game.model.RoomEntity;
+import ua.od.game.model.Room;
 import ua.od.game.repository.RoomRepository;
 import ua.od.game.service.RoomService;
 
@@ -22,18 +22,18 @@ public class RoomServiceImpl implements RoomService {
 
     public List<RoomDto> getListOfRooms() {
         final List<RoomDto> rooms = new LinkedList<>();
-        roomRepository.findAll().forEach((RoomEntity roomEntity) -> {
+        roomRepository.findAll().forEach((Room room) -> {
             rooms.add(new RoomDto(){{
-                setId(roomEntity.getId());
-                setName(roomEntity.getName());
-                setDescription(roomEntity.getDescription());
+                setId(room.getId());
+                setName(room.getName());
+                setDescription(room.getDescription());
             }});
         });
         return rooms;
     }
 
     public RoomDto joinRoom(Long roomId) {
-        RoomEntity room = roomRepository.findById(roomId)
+        Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new ResourceNotFoundException("Room", "id", roomId));
 
         room = roomRepository.save(room);
@@ -47,7 +47,7 @@ public class RoomServiceImpl implements RoomService {
     }
 
     public RoomDto leaveRoom(Long roomId) {
-        RoomEntity room = roomRepository.findById(roomId)
+        Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new ResourceNotFoundException("Room", "id", roomId));
 
         room = roomRepository.save(room);
