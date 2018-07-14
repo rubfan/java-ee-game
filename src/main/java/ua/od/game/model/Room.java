@@ -17,7 +17,7 @@ import java.util.Date;
 public class Room implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @NotBlank
     private String name;

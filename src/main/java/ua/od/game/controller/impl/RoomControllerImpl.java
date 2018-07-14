@@ -25,7 +25,7 @@ public class RoomControllerImpl implements RoomController {
     @Autowired
     public RoomService roomService;
 
-    @GetMapping("/list")
+    @GetMapping(name = "/list")
     public List<RoomDto> getRoomList() {
         List<RoomDto> roomList = roomService.getListOfRooms();
         Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, roomList.toString());

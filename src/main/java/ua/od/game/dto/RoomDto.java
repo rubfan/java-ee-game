@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoomDto {
-    private Long id;
+    private int id;
     private String name;
     private String description;
     private Date startGameTime;
