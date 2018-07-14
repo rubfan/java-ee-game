@@ -13,6 +13,7 @@ import java.util.Date;
  */
 @Data
 @Entity
+@Table(name = "room")
 //@EntityListeners(AuditingEntityListener.class)
 public class Room implements Serializable {
     @Id

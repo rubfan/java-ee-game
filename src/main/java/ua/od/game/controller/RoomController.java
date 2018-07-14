@@ -10,6 +10,6 @@ import java.util.List;
  */
 public interface RoomController {
     List<RoomDto> getRoomList();
-    ResponseEntity<?> joinRoom(Long roomId);
-    ResponseEntity<?> exitRoom(Long roomId);
+    ResponseEntity<?> joinRoom(Integer roomId);
+    ResponseEntity<?> exitRoom(Integer roomId);
 }

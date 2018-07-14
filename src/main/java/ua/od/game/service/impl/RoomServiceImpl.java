@@ -32,7 +32,7 @@ public class RoomServiceImpl implements RoomService {
         return rooms;
     }
 
-    public RoomDto joinRoom(Long roomId) {
+    public RoomDto joinRoom(Integer roomId) {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new ResourceNotFoundException("Room", "id", roomId));
 
@@ -46,7 +46,7 @@ public class RoomServiceImpl implements RoomService {
         );
     }
 
-    public RoomDto leaveRoom(Long roomId) {
+    public RoomDto leaveRoom(Integer roomId) {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new ResourceNotFoundException("Room", "id", roomId));
 

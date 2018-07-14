@@ -8,14 +8,14 @@ function refreshButtonsStatus() {
         document.getElementById('login').style.display = "none";
         document.getElementById('new_user').style.display = "none";
         document.getElementById('lets_play').style.display = "inline-block";
-        document.getElementById('name').style.display = "none";
+        document.getElementById('email').style.display = "none";
         document.getElementById('password').style.display = "none";
     } else {
         document.getElementById('logout').style.display = "none";
         document.getElementById('login').style.display = "inline-block";
         document.getElementById('new_user').style.display = "inline-block";
         document.getElementById('lets_play').style.display = "none";
-        document.getElementById('name').style.display = "inline-block";
+        document.getElementById('email').style.display = "inline-block";
         document.getElementById('password').style.display = "inline-block";
     }
 }

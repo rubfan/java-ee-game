@@ -19,13 +19,13 @@ import java.util.logging.Logger;
  * @author ruslan.gramatic on 6/27/18.
  */
 @RestController
-@RequestMapping("/room")
+@RequestMapping("/rest/room")
 public class RoomControllerImpl implements RoomController {
 
     @Autowired
     public RoomService roomService;
 
-    @GetMapping(name = "/list")
+    @GetMapping("/list")
     public List<RoomDto> getRoomList() {
         List<RoomDto> roomList = roomService.getListOfRooms();
         Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, roomList.toString());
@@ -33,14 +33,14 @@ public class RoomControllerImpl implements RoomController {
     }
 
     @GetMapping("/{roomId}/join")
-    public ResponseEntity<?> joinRoom(@PathVariable(value = "roomId") Long roomId) {
+    public ResponseEntity<?> joinRoom(@PathVariable(value = "roomId") Integer roomId) {
         Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,"room=" + roomId);
         roomService.joinRoom(roomId);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping("/{roomId}/exit")
-    public ResponseEntity<?> exitRoom(@PathVariable(value = "roomId") Long roomId) {
+    public ResponseEntity<?> exitRoom(@PathVariable(value = "roomId") Integer roomId) {
         Logger.getLogger(this.getClass().getName()).log(Level.SEVERE,"room=" + roomId);
         roomService.leaveRoom(roomId);
         return ResponseEntity.ok().build();

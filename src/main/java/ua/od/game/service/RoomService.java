@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface RoomService {
     List<RoomDto> getListOfRooms();
-    RoomDto joinRoom(Long roomId);
-    RoomDto leaveRoom(Long roomId);
+    RoomDto joinRoom(Integer roomId);
+    RoomDto leaveRoom(Integer roomId);
 }
