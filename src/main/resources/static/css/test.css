@@ -1,0 +1,27 @@
+/*==================INFO TABLE=============*/
+body{
+    color: #ffd000;
+}
+
+.info-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.info-table td, .info-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.info-table tr:nth-child(even){background-color: #313c45;}
+
+.info-table tr:hover {background-color: #715400;}
+
+.info-table th {
+    font-family: 'game-font';
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #708e9d;
+    color: white;
+}
